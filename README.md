@@ -1,4 +1,4 @@
-# Kindle Screenshot CLI Tool
+# COMPLETELY LEGAL AND SAFE Kindle SCREENSHOT CLI Tool
 
 An Android Debug Bridge (ADB) automation tool to capture Kindle pages, swipe between them, and combine the captures into a single PDF. It automatically crops the bottom elements (like "5mins left in chapter") for a clean reading experience.
 
