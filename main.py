@@ -29,11 +29,11 @@ def check_adb_connection():
         lines = [l for l in output.splitlines() if l.strip()]
         devices = [l for l in lines[1:] if "device" in l and not l.startswith("List")]
         if not devices:
-            print("❌ No device connected. Please connect your Android device with USB debugging ON.")
+            print("No device connected. Please connect your Android device with USB debugging ON.")
             input("Press Enter to exit...")
             sys.exit(1)
     except (subprocess.CalledProcessError, FileNotFoundError):
-        print("❌ adb command not found. Please install Android Platform Tools and ensure adb is on your PATH.")
+        print("adb command not found. Please install Android Platform Tools and ensure adb is on your PATH.")
         input("Press Enter to exit...")
         sys.exit(1)
 
@@ -77,16 +77,16 @@ def convert_to_pdf(image_dir, output_pdf):
         [os.path.join(image_dir, f) for f in os.listdir(image_dir) if f.lower().endswith('.png')]
     )
     if not images:
-        print("❌ No images found to convert.")
+        print("No images found to convert.")
         return
     with open(output_pdf, 'wb') as f:
         f.write(img2pdf.convert(images))
-    print(f"\n✅ PDF saved as: {output_pdf}")
+    print(f"\nPDF saved as: {output_pdf}")
     beep()
 
 
 def main():
-    print("📚 Kindle Screenshot Tool (Interactive Mode)\n")
+    print("Kindle Screenshot Tool (Interactive Mode)\n")
 
     # Prompt user for values
     try:
@@ -124,12 +124,12 @@ def main():
             swipe_next()
             time.sleep(delay)
     except KeyboardInterrupt:
-        print("\n🛑 Process interrupted by user.")
+        print("\nProcess interrupted by user.")
 
-    print("\n🧾 Converting to PDF...")
+    print("\n converting to PDF...")
     convert_to_pdf(directory, output_pdf)
 
-    input("\n✅ Done. Press Enter to close...")
+    input("\nd one. Press Enter to close...")
 
 
 if __name__ == '__main__':
